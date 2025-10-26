@@ -38,7 +38,7 @@ body {
     background-color: var(--bg-overlay);
     border-radius: 12px;
     width: 100%;
-    max-width: 700px;
+    max-width: 400px;
     margin: 2rem auto;
     padding: 2.5rem;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
@@ -68,68 +68,6 @@ transform: rotate(0deg);
     100% {
 transform: rotate(360deg);
     }
-}
-
-/* Efectos de partículas doradas */
-.gold-dust {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: 20px 20px;
-    opacity: 0.3;
-    z-index: -1;
-    animation: float 60s linear infinite;
-}
-
-.gold-particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.gold-particle {
-    position: absolute;
-    background: #493525;
-    border-radius: 0%;
-    pointer-events: none;
-    opacity: 0.25;
-    animation: floatAndRotate 15s linear infinite;
-}
-
-@keyframes floatAndRotate {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.2;
-    }
-    90% {
-        opacity: 0.4;
-    }
-    100% {
-        transform: translateY(-100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-
-@keyframes float {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
-}
-
-@keyframes floatParticle {
-    0% {transform: translateY(0) translateX(0); opacity: 0;}
-    10% {opacity: 0.2;}
-    90% {opacity: 0.3;}
-    100% {transform: translateY(-100vh) translateX(20px); opacity: 0;}
 }
 
 /* Títulos y animaciones de texto */
@@ -170,7 +108,7 @@ transform: rotate(360deg);
 
 @font-face {
     font-family: 'Ballet-Regular-VariableFont_opsz';
-    src: url('Ballet-Regular-VariableFont_opsz.ttf');
+    src: url('/-LETRAS/fonts/Ballet-Regular-VariableFont_opsz.ttf');
 }
 
 .nombre-completo h2 {
@@ -204,9 +142,9 @@ transform: rotate(360deg);
 /* Contactos */
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
-    width: 100%;
+    width: 50%;
     margin: 0 auto;    
 }
 
@@ -380,42 +318,9 @@ transform: rotate(360deg);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* Iconos sociales */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.social-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255,255,255,0.7);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    background: linear-gradient(45deg, var(--gold-primary), var(--gold-tertiary));
-}
-
-.social-icon img { width: 70%; height: 70%; object-fit: contain; }
-
-
 @media (max-width: 768px) {
     h1 {
 font-size: 2.8rem;
-    }
-    
-    .restaurant-name {
-font-size: 1.8rem;
     }
     
     .nombre-completo h2 {
@@ -443,31 +348,4 @@ grid-template-columns: 1fr;
         width: 70%;
     padding: 1.5rem;
     }
-}
-
-#galleryButton .button {
-    display: inline-block;
-    margin-left: 35%;
-    padding: 5px 20px;
-    background-color: transparent; /* Fondo transparente */
-    color: #333; /* Color de texto neutro */
-    border: 2px solid #333; /* Borde fino */
-    border-radius: 5px; /* Bordes suaves */
-    font-weight: 500;
-    font-family: 'Raleway', sans-serif;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
-}
-
-#galleryButton .button:hover {
-    background-color: #333; /* Fondo al pasar mouse */
-    color: #fff; /* Texto blanco al hover */
-    transform: translateY(-2px); /* Sutil elevación */
-}
-
-.intro-text {
-    font-size: 12px;
-    margin-top: -30px;
-
 }
