@@ -16,7 +16,15 @@
 </head>
 
 <body>
+    <!-- Partículas doradas flotantes -->
+    <div class="gold-dust"></div>
+    <div class="gold-particles"></div>
+
     <div class="card">
+        <div class="seal-container">
+            <div class="official-seal"></div>
+        </div>
+
         <div class="nombre-completo">
             <h2 >Hurtado</h2>
             <h3 >MUEBLERIA</h3>
@@ -27,17 +35,31 @@
         <p class="intro-text">Para más información, contáctenos a través de:</p>
 
         <div class="contact-grid">
-            <div class="contact-item" >
+            <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono/WhatsApp:</p>
-                    <a class="contact-link numwa">73183007</a>
+                    <p class="contact-label">Teléfono:</p>
+                    <a class="contact-link numwa" href="tel:+59173183007">73183007</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div>
+                    <p class="contact-label">WhatsApp:</p>
+                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59173183007&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
                 </div>
             </div>
             <div class="contact-item full-width" style="margin-bottom: 20px;">
                 <div>
                     <p class="contact-label">Ubicación:</p>
-                    <a class="contact-link fbcorr">Calle Muchiri entre Av. Grigota y calle Jose Manuel Aponte</a>
+                    <a class="contact-link fbcorr" href="https://maps.app.goo.gl/puFaEsTvYSU4n42z7">Calle Muchiri entre Av. Grigota y calle Jose Manuel Aponte</a>
                 </div>
+            </div>
+        </div>
+
+        <!-- Dropdown Ubicación -->
+        <div class="dropdown" id="ubicacionDropdown">
+            <a class="dropdown-toggle"><span>Ubicación</span></a>
+            <div class="content2">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3798.9191868759553!2d-63.18797061581082!3d-17.79549475919738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ3JzQ0LjEiUyA2M8KwMTEnMTcuMSJX!5e0!3m2!1ses-419!2sbo!4v1760642563217!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 
@@ -54,6 +76,22 @@
             </div>
         </div>
 
+        <!-- Botón Galería -->
+<div id="galleryButton">
+    <a class="button" href="galeria.html">
+        <span>Galería</span>
+    </a>
+</div>
+
+        <!-- Íconos sociales -->
+        <div class="social-icons">
+            <a href="https://api.whatsapp.com/send?phone=59173183007&text=Buenas%20quisiera%20saber%20sobre..." target="_blank" class="social-icon">
+                <img src="/-LOGOS/WA.png" alt="WhatsApp">
+            </a>
+            <a href="https://maps.app.goo.gl/puFaEsTvYSU4n42z7" target="_blank" class="social-icon">
+                <img src="/-LOGOS/Maps.png" alt="Ubicación">
+            </a>
+        </div>
     </div>
 
 <script>
@@ -74,8 +112,33 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.dropdown').forEach(item => item.classList.remove('active'));
         }
     });
-});
+
+            // Efecto de partículas doradas dinámicas
+const goldParticles = document.querySelector('.gold-particles');
+
+for (let i = 0; i < 10; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('gold-particle');
+
+    // posición inicial
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `100%`;
+
+    // tamaño aleatorio
+    const size = Math.random() * 20 + 5;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+
+    // duración aleatoria para que algunas vayan más lento
+    const duration = Math.random() * 5 + 10; // entre 10 y 20 segundos
+    particle.style.animationDuration = `${duration}s`;
+
+    // retardo aleatorio para que no todas empiecen juntas
+    particle.style.animationDelay = `${Math.random() * 2}s`;
+
+    goldParticles.appendChild(particle);
+}
+        });
 </script>
 </body>
 </html>
-
